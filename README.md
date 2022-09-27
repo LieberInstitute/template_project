@@ -48,7 +48,7 @@ For realistic examples, check:
 * Update the JHPCE location of the clone you made of `yourRepository`
   * The `yourTeam` portion will likely be `lcolladotor` or `marmaypag` or some other LIBD team.
   * Ask which LIBD code this project belongs to in order to figure out the `someProject_LIBDcode`
-* Update the JHPCE permissions of your user group. For example, by following the instructions on the [`#libd_jhu_spatial`](https://jhu-genomics.slack.com/archives/CR9NYA0BF/p1639091722135100) Slack channel.
+* Update the JHPCE permissions of your user group. For example, by following the instructions on the [`#libd_jhu_spatial`](https://jhu-genomics.slack.com/archives/CR9NYA0BF/p1639091722135100) Slack private channel or [`organizing-your-work.html#dcs04-scripts`](https://lcolladotor.github.io/bioc_team_ds/organizing-your-work.html#dcs04-scripts) (public).
   * Summary: `sh /dcs04/lieber/lcolladotor/_jhpce_org_LIBD001/update_permissions_spatialteam.sh /dcs04/lieber/yourTeam/someProject_LIBDcode/yourRepository`
 * Add any `raw-data` related to your project.
   * See [`raw-data/FASTQ/README.md`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/FASTQ/README.md) for information about creating [soft links](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) (symbolic links) for external raw-data files.
