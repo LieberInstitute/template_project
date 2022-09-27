@@ -1,0 +1,4 @@
+## Note how despite ignoring a specific file
+## we can still version control it by using
+## git add -f path_to_file
+penguins_data.csv
