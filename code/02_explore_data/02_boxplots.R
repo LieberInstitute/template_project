@@ -24,7 +24,12 @@ penguins_data <-
     read.csv(here("processed-data", "01_read_data_to_r", "penguins_data.csv"))
 
 ## Define comparisons we want
-my_comparisons <- list( c("Adelie", "Gentoo"), c("Gentoo", "Chinstrap"), c("Adelie", "Chinstrap") )
+my_comparisons <-
+    list(
+        c("Adelie", "Gentoo"),
+        c("Gentoo", "Chinstrap"),
+        c("Adelie", "Chinstrap")
+    )
 
 ## Make a plot exploring the data
 pdf(
