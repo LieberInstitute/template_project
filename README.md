@@ -18,11 +18,14 @@ For realistic examples, check:
 ## Contents
 
 * `template_project.Rproj`: an RStudio project file with some non-default settings that we use frequently. They protect us from making some hard to reproduce errors (involve .RData files) as well as ensure that we can work from winOS and macOS without issues. These are:
-  * Restore .RData into workspace at startup: No
-  * Save workspace to .RData on exit: No
-  * Always save history (even if not saving .RData): No
-  * Tab width: 4
-  * Line ending conversion: Posix (LF)
+  * Restore .RData into workspace at startup: `No`
+  * Save workspace to .RData on exit: `No`
+  * Always save history (even if not saving .RData): `No`
+    * These 3 options help prevent some irreproducible results/errors.
+  * Tab width: `4`
+    * Default tab width used in Bioconductor projects
+  * Line ending conversion: `Posix (LF)`.
+    * Selecting this option makes it easy to work with the same repo on both winOS and linux/macOS.
   
 ## How to adapt this template
 
