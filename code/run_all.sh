@@ -1,12 +1,13 @@
 #!/bin/bash
 #$ -cwd
 #$ -l mem_free=2G,h_vmem=2G,h_fsize=100G
-#$ -N ranger_metrics_spaceranger
-#$ -o logs/run_all_ranger_metrics_spaceranger.txt
-#$ -e logs/run_all_ranger_metrics_spaceranger.txt
+#$ -N run_all_template_project
+#$ -o logs/run_all_template_project.txt
+#$ -e logs/run_all_template_project.txt
 #$ -m e
 
 ## Adapted from https://github.com/LieberInstitute/Visium_IF_AD/blob/master/code/run_all_post_spaceranger.sh
+## and https://github.com/LieberInstitute/ranger_metrics/blob/master/code/spaceranger/run_all.sh
 
 echo "**** Job starts ****"
 date
@@ -21,9 +22,15 @@ echo "Task id: ${SGE_TASK_ID}"
 ## List current modules for reproducibility
 module list
 
-MAINDIR="/dcs04/lieber/lcolladotor/with10x_LIBD001/ranger_metrics"
-CODEDIR="${MAINDIR}/code/spaceranger"
-PROCESSEDIR="${MAINDIR}/processed-data/spaceranger"
+MAINDIR="/dcs04/lieber/lcolladotor/_jhpce_org_LIBD001/template_project"
+CODEDIR="${MAINDIR}/code"
+PROCESSEDIR="${MAINDIR}/processed-data"
+
+## Update code style
+cd ${CODEDIR}
+## Will crash if you don't have 'module load conda_R' in your ~/.bashrc file
+## See https://lcolladotor.github.io/bioc_team_ds/config-files.html#bashrc
+Rscript update_style.R
 
 ## Re-combine the pre-sequencing summaries
 cd ${CODEDIR}/01_read_experimental_summaries
