@@ -4,6 +4,7 @@
 #$ -N ggpairs
 #$ -o logs/01_ggpairs.txt
 #$ -e logs/01_ggpairs.txt
+#$ -hold_jid read_data_to_r
 #$ -m e
 
 echo "**** Job starts ****"

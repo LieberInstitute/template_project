@@ -4,6 +4,7 @@
 #$ -N boxplots
 #$ -o logs/02_boxplots.txt
 #$ -e logs/02_boxplots.txt
+#$ -hold_jid read_data_to_r
 #$ -m e
 
 echo "**** Job starts ****"
