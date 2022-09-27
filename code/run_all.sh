@@ -34,6 +34,7 @@ Rscript update_style.R
 
 ## Read in some raw-data into R
 cd ${CODEDIR}/01_read_data_to_r
+mkdir -p logs ## Create the logs directory if it doesn't exist
 # Delete outputs before re-generating them: log file + data
 rm logs/01_read_data_to_r.txt
 rm ${PROCESSEDIR}/01_read_data_to_r/penguins_data.csv
@@ -41,6 +42,7 @@ qsub 01_read_data_to_r.sh
 
 ## Explore the data
 cd ${CODEDIR}/02_explore_data
+mkdir -p logs ## Create the logs directory if it doesn't exist
 rm logs/01_ggpairs.txt
 qsub 01_ggpairs.sh
 rm logs/02_boxplots.txt
