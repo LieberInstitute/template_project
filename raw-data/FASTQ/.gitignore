@@ -1,0 +1,5 @@
+## Never use just * to ignore all files
+## That is, be more specific when ignoring files to version control. For example:
+*.fastq.gz
+## The above ignores all files ending with .fastq.gz which is the typical file
+## extension for FASTQ files.
