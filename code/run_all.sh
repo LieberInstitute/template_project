@@ -32,25 +32,19 @@ cd ${CODEDIR}
 ## See https://lcolladotor.github.io/bioc_team_ds/config-files.html#bashrc
 Rscript update_style.R
 
-## Re-combine the pre-sequencing summaries
-cd ${CODEDIR}/01_read_experimental_summaries
-rm logs/01_read_summaries.txt
-rm ${PROCESSEDIR}/01_read_experimental_summaries/presequencing_summary.csv
-qsub 01_read_summaries.sh
+## Read in some raw-data into R
+cd ${CODEDIR}/01_read_data_to_r
+# Delete outputs before re-generating them: log file + data
+rm logs/01_read_data_to_r.txt
+rm ${PROCESSEDIR}/01_read_data_to_r/penguins_data.csv
+qsub 01_read_data_to_r.sh
 
-## Re-combine the spaceranger metrics
-cd ${CODEDIR}/02_read_spaceranger_summaries
-rm logs/01_read_spaceranger_metrics.txt
-rm ${PROCESSEDIR}/02_read_spaceranger_summaries/sequencing_metrics.csv
-qsub 01_read_spaceranger_metrics.sh
-
-## Combine both tables and explore them
-cd ${CODEDIR}/03_merged_metrics
-rm logs/01_merge_metrics.txt
-rm ${PROCESSEDIR}/03_merged_metrics/merged_metrics.csv
-qsub 01_merge_metrics.sh
-rm logs/02_explore_metrics.txt
-qsub 02_explore_metrics.sh
+## Explore the data
+cd ${CODEDIR}/02_explore_data
+rm logs/01_ggpairs.txt
+qsub 01_ggpairs.sh
+rm logs/02_boxplots.txt
+qsub 02_boxplots.sh
 
 
 ## Add future steps here
