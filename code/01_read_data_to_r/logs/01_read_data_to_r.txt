@@ -6,12 +6,12 @@ Loading LIBD module for rmate/1.5.10
 Loading LIBD module for ruby/3.1.2
 Loading conda_R/4.2
 **** Job starts ****
-Tue Sep 27 10:57:22 EDT 2022
+Tue Sep 27 11:02:52 EDT 2022
 **** JHPCE info ****
 User: lcollado
-Job id: 115738
+Job id: 115748
 Job name: read_data_to_r
-Hostname: compute-095.cm.cluster
+Hostname: compute-098.cm.cluster
 Task id: undefined
 Unloading conda_R/4.2
 Loading conda_R/4.2
@@ -26,8 +26,65 @@ Currently Loaded Modules:
  
 
 here() starts at /dcs04/lieber/lcolladotor/_jhpce_org_LIBD001/template_project
-Error in library("palmerpenguins") : 
-  there is no package called ‘palmerpenguins’
-Execution halted
+Data sets in package ‘palmerpenguins’:
+
+penguins                Size measurements for adult foraging penguins
+                        near Palmer Station, Antarctica
+penguins_raw (penguins)
+                        Penguin size, clutch, and blood isotope data
+                        for foraging adults near Palmer Station,
+                        Antarctica
+
+[1] 344   8
+# A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year
+  <fct>   <fct>              <dbl>         <dbl>       <int>   <int> <fct> <int>
+1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
+2 Adelie  Torgersen           39.5          17.4         186    3800 fema…  2007
+3 Adelie  Torgersen           40.3          18           195    3250 fema…  2007
+4 Adelie  Torgersen           NA            NA            NA      NA <NA>   2007
+5 Adelie  Torgersen           36.7          19.3         193    3450 fema…  2007
+6 Adelie  Torgersen           39.3          20.6         190    3650 male   2007
+# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
+[1] "Reproducibility information:"
+[1] "2022-09-27 11:02:54 EDT"
+   user  system elapsed 
+  0.918   0.141   1.226 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 Patched (2022-08-30 r82775)
+ os       CentOS Linux 7 (Core)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       US/Eastern
+ date     2022-09-27
+ pandoc   2.19.2 @ /jhpce/shared/jhpce/core/conda/miniconda3-4.11.0/envs/svnR-4.2/bin/pandoc
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package        * version date (UTC) lib source
+ cli              3.3.0   2022-04-25 [2] CRAN (R 4.2.1)
+ fansi            1.0.3   2022-03-24 [2] CRAN (R 4.2.1)
+ glue             1.6.2   2022-02-24 [2] CRAN (R 4.2.1)
+ here           * 1.0.1   2020-12-13 [2] CRAN (R 4.2.1)
+ lifecycle        1.0.1   2021-09-24 [2] CRAN (R 4.2.1)
+ magrittr         2.0.3   2022-03-30 [2] CRAN (R 4.2.1)
+ palmerpenguins * 0.1.1   2022-08-15 [1] CRAN (R 4.2.1)
+ pillar           1.8.1   2022-08-19 [2] CRAN (R 4.2.1)
+ pkgconfig        2.0.3   2019-09-22 [2] CRAN (R 4.2.1)
+ rlang            1.0.5   2022-08-31 [1] CRAN (R 4.2.1)
+ rprojroot        2.0.3   2022-04-02 [2] CRAN (R 4.2.1)
+ sessioninfo    * 1.2.2   2021-12-06 [2] CRAN (R 4.2.1)
+ tibble           3.1.8   2022-07-22 [2] CRAN (R 4.2.1)
+ utf8             1.2.2   2021-07-24 [2] CRAN (R 4.2.1)
+ vctrs            0.4.1   2022-04-13 [2] CRAN (R 4.2.1)
+
+ [1] /users/lcollado/R/4.2
+ [2] /jhpce/shared/jhpce/core/conda/miniconda3-4.11.0/envs/svnR-4.2/R/4.2/lib64/R/site-library
+ [3] /jhpce/shared/jhpce/core/conda/miniconda3-4.11.0/envs/svnR-4.2/R/4.2/lib64/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 **** Job ends ****
-Tue Sep 27 10:57:25 EDT 2022
+Tue Sep 27 11:02:55 EDT 2022
