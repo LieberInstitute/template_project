@@ -28,5 +28,9 @@ For realistic examples, check:
 
 * Create a new repository (`yourRepository`) following the instructions from GitHub on [creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 * Rename `template_project.Rproj` to match the name of the new repository you created (`yourRepository`)
-
+* Update the JHPCE location of the clone you made of `yourRepository`
+  * The `yourTeam` portion will likely be `lcolladotor` or `marmaypag` or some other LIBD team.
+  * Ask which LIBD code this project belongs to in order to figure out the `someProject_LIBDcode`
+* Update the JHPCE permissions of your user group. For example, by following the instructions on the [`#libd_jhu_spatial`](https://jhu-genomics.slack.com/archives/CR9NYA0BF/p1639091722135100) Slack channel.
+  * Summary: `sh /dcs04/lieber/lcolladotor/_jhpce_org_LIBD001/update_permissions_spatialteam.sh /dcs04/lieber/yourTeam/someProject_LIBDcode/yourRepository`
 
