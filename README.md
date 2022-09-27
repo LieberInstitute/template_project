@@ -18,7 +18,7 @@ For realistic examples, check:
 
 ## Contents
 
-* `template_project.Rproj`: an RStudio project file with some non-default settings that we use frequently. They protect us from making some hard to reproduce errors (involve .RData files) as well as ensure that we can work from winOS and macOS without issues. These are:
+* [`template_project.Rproj`](https://github.com/LieberInstitute/template_project/blob/main/template_project.Rproj): an RStudio project file with some non-default settings that we use frequently. They protect us from making some hard to reproduce errors (involve .RData files) as well as ensure that we can work from winOS and macOS without issues. These are:
   * Restore .RData into workspace at startup: `No`
   * Save workspace to .RData on exit: `No`
   * Always save history (even if not saving .RData): `No`
@@ -27,8 +27,20 @@ For realistic examples, check:
     * Default tab width used in Bioconductor projects
   * Line ending conversion: `Posix (LF)`.
     * Selecting this option makes it easy to work with the same repo on both winOS and linux/macOS.
+* [`raw-data`](https://github.com/LieberInstitute/template_project/blob/main/raw-data): example organization for the `raw-data` files.
+  * This is data that is not produced by any code in this repository and that we should back up. Using the same `raw-data` location in every project makes it easy for us to identify directories we need to back up across all projects.
+  * Contains example `.gitignore` and `README.md` files.
+* [`code`](https://github.com/LieberInstitute/template_project/blob/main/code): example organization for the `code` files.
+  * Contains example files for 2 analysis steps and 3 example R scripts.
+  * [`code/run_all.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/run_all.sh): example bash script for re-running all analyses in this project.
+  * [`code/update_style.R`](https://github.com/LieberInstitute/template_project/blob/main/code/update_style.R): common R script we use for automatically styling all code we write, which makes it easier to read across projects. It uses `styler` and `biocthis` to accomplish this.
+* [`processed-data`](https://github.com/LieberInstitute/template_project/blob/main/processed-data): example organization for the `processed-data` files.
+  * Any data that can be recreated with the contents from `code` (which are version controlled) and `raw-data` (which ideally should be backed up). It might take some time to recreate this data, but in theory we should have the resources to do this.
+  * We version control small output summary files (typically < 25 Mb), such as files that end up being supplementary files of a paper.
+* [`plots`](https://github.com/LieberInstitute/template_project/blob/main/plots): example organization for the `plots` files.
+  * We typically only version control small plot files (about < 25 Mb). We can then share the specific plot links on Slack or elsewhere, such that if we later update the plot(s), the links will still work. We can also see how they changed over time thanks to having version controlled them.
   
-## How to adapt this template
+## How to use this template
 
 * Create a new repository (`yourRepository`) following the instructions from GitHub on [creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 * Rename [`template_project.Rproj`](https://github.com/LieberInstitute/template_project/blob/main/template_project.Rproj) to match the name of the new repository you created (`yourRepository.Rproj` for `yourRepository`)
@@ -38,7 +50,13 @@ For realistic examples, check:
 * Update the JHPCE permissions of your user group. For example, by following the instructions on the [`#libd_jhu_spatial`](https://jhu-genomics.slack.com/archives/CR9NYA0BF/p1639091722135100) Slack channel.
   * Summary: `sh /dcs04/lieber/lcolladotor/_jhpce_org_LIBD001/update_permissions_spatialteam.sh /dcs04/lieber/yourTeam/someProject_LIBDcode/yourRepository`
 * Add any `raw-data` related to your project.
-  * This is data that is not produced by any code in this repository and that we should back up. Using the same `raw-data` location in every project makes it easy for us to identify directories we need to back up across all projects.
   * See [`raw-data/FASTQ/README.md`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/FASTQ/README.md) for information about creating soft links (symbolic links) for external raw-data files.
   * See [`raw-data/FASTQ/.gitignore`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/FASTQ/.gitignore) for information about making very specific `.gitignore` files.
   * See [`raw-data/sample_info/README.md`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/sample_info/README.md) about where to document sample sheets (typically Excel files) we use for sequencing orders with the JHU Single Cell & Transcriptomics Core.
+* Start your first code directory, like `code/01_something`. Typically this first step reads in data from `raw-data` and imports it into R.
+  * See [`code/01_read_data_to_r/01_read_data_to_r.R`](https://github.com/LieberInstitute/template_project/blob/main/code/01_read_data_to_r/01_read_data_to_r.R) as an example R script.
+* Use [`sgejobs::job_single()`](http://research.libd.org/sgejobs/reference/job_single.html) to create a companion shell script for your R script, such that you can use `qsub` to run it at [JHCPE](http://www.jhpce.jhu.edu/).
+  * See [`code/01_read_data_to_r/01_read_data_to_r.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/01_read_data_to_r/01_read_data_to_r.sh) as an example bash script created with `sgejobs::job_single()`.
+* Edit the [`code/run_all.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/run_all.sh) script that specifies how you can re-run all analyses.
+  * This file is useful for reproducibility and for cases when we do need to re-run all or part of the analyses. For example, after a bug fix in a package the analysis depends on.
+* 
