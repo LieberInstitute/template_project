@@ -5,6 +5,7 @@ This is a template project following the guidelines from [organizing-your-work](
 
 For realistic examples, check:
 
+* [LieberInstitute/ranger_metrics](https://github.com/LieberInstitute/ranger_metrics)
 * [LieberInstitute/Visium_IF_AD](https://github.com/LieberInstitute/Visium_IF_AD)
 * [LieberInstitute/DLPFC_snRNAseq](https://github.com/LieberInstitute/DLPFC_snRNAseq)
 * [LieberInstitute/spatialDLPFC](https://github.com/LieberInstitute/spatialDLPFC)
@@ -12,7 +13,7 @@ For realistic examples, check:
 
 ## Internal
 
-* JHPCE location: `/dcs04/lieber/yourTeam/someProject_LIBDcode/yourRepository` such as `/dcs04/lieber/lcolladotor/spatialDLPFC_LIBD4035/spatialDLPFC`
+* JHPCE location: `/dcs04/lieber/yourTeam/someProject_LIBDcode/yourRepository` such as `/dcs04/lieber/lcolladotor/spatialDLPFC_LIBD4035/spatialDLPFC`. This template is located at `/dcs04/lieber/lcolladotor/_jhpce_org_LIBD001/template_project`.
 
 
 ## Contents
@@ -30,7 +31,7 @@ For realistic examples, check:
 ## How to adapt this template
 
 * Create a new repository (`yourRepository`) following the instructions from GitHub on [creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-* Rename `template_project.Rproj` to match the name of the new repository you created (`yourRepository`)
+* Rename `template_project.Rproj` to match the name of the new repository you created (`yourRepository.Rproj` for `yourRepository`)
 * Update the JHPCE location of the clone you made of `yourRepository`
   * The `yourTeam` portion will likely be `lcolladotor` or `marmaypag` or some other LIBD team.
   * Ask which LIBD code this project belongs to in order to figure out the `someProject_LIBDcode`
