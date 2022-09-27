@@ -38,6 +38,7 @@ For realistic examples, check:
 * Update the JHPCE permissions of your user group. For example, by following the instructions on the [`#libd_jhu_spatial`](https://jhu-genomics.slack.com/archives/CR9NYA0BF/p1639091722135100) Slack channel.
   * Summary: `sh /dcs04/lieber/lcolladotor/_jhpce_org_LIBD001/update_permissions_spatialteam.sh /dcs04/lieber/yourTeam/someProject_LIBDcode/yourRepository`
 * Add any `raw-data` related to your project.
+  * This is data that is not produced by any code in this repository and that we should back up. Using the same `raw-data` location in every project makes it easy for us to identify directories we need to back up across all projects.
   * See [`raw-data/FASTQ/README.md`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/FASTQ/README.md) for information about creating soft links (symbolic links) for external raw-data files.
   * See [`raw-data/FASTQ/.gitignore`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/FASTQ/.gitignore) for information about making very specific `.gitignore` files.
   * See [`raw-data/sample_info/README.md`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/sample_info/README.md) about where to document sample sheets (typically Excel files) we use for sequencing orders with the JHU Single Cell & Transcriptomics Core.
