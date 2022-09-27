@@ -20,7 +20,7 @@ dir.create(dir_rdata, showWarnings = FALSE, recursive = TRUE)
 
 ## Read in raw-data
 ## for this example, we'll just load some data in an R package
-data(package = 'palmerpenguins')
+data(package = "palmerpenguins")
 
 ## Explore the raw data
 dim(penguins)
