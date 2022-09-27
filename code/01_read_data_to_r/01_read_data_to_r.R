@@ -27,11 +27,13 @@ dim(penguins)
 head(penguins)
 
 ## Export for later use
-write.csv(penguins, file = file.path(dir_rdata, "penguins_data.csv"))
+write.csv(penguins, file = file.path(dir_rdata, "penguins_data.csv"), row.names = FALSE)
 
 ## Reproducibility information
 print("Reproducibility information:")
 Sys.time()
 proc.time()
-options(width = 120)
-session_info()
+options(width = 120) ## Makes it easier to read later
+session_info() ## We want to record this information on the log file. If you
+## don't have a companion shell script (sgejobs), then copy-paste the output
+## into this script.
