@@ -1,25 +1,21 @@
-Adding LIBD modules
-Loading git
-Loading LIBD module for git-status-size/github
-Loading LIBD module for git-lfs/2.8.0
-Loading LIBD module for rmate/1.5.10
-Loading LIBD module for ruby/3.1.2
-Loading conda_R/4.2
 **** Job starts ****
-Tue Sep 27 11:02:37 EDT 2022
+Fri Jun 28 11:42:48 AM EDT 2024
 **** JHPCE info ****
-User: lcollado
-Job id: 115747
+User: neagles
+Job id: 7988292
 Job name: run_all_template_project
-Hostname: compute-096.cm.cluster
-Task id: undefined
+Node name: compute-098
+Task id: 
+Unloading conda_R/4.4
+Loading conda_R/4.3
+
+The following have been reloaded with a version change:
+  1) conda/3-24.3.0 => conda/3-23.3.1     2) conda_R/4.4 => conda_R/4.3
+
 
 Currently Loaded Modules:
-  1) matlab/R2019a     6) COMMUNITY_CENTOS7_DEFAULT_ENV  11) ruby/3.1.2
-  2) stata/17          7) JHPCE_CENTOS7_DEFAULT_ENV      12) rmate/1.5.10
-  3) JHPCE_tools/1.0   8) git-status-size/github         13) conda/3-4.11.0
-  4) sge/8.1.9         9) git/2.28.0                     14) conda_R/4.2
-  5) gcc/4.4.7        10) git-lfs/2.8.0
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3
 
  
 
@@ -34,8 +30,6 @@ Status	Count	Legend
 ℹ 	0	File changed.
 ✖ 	0	Styling threw an error.
 ────────────────────────────────────────
-Your job 115748 ("read_data_to_r") has been submitted
-Your job 115749 ("ggpairs") has been submitted
-Your job 115750 ("boxplots") has been submitted
+Submitted batch job 7988295
 **** Job ends ****
-Tue Sep 27 11:02:39 EDT 2022
+Fri Jun 28 11:42:55 AM EDT 2024

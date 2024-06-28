@@ -1,17 +1,13 @@
 **** Job starts ****
-Fri Jun 28 11:21:52 AM EDT 2024
+Fri Jun 28 11:42:57 AM EDT 2024
 **** JHPCE info ****
 User: neagles
-Job id: 7985867
+Job id: 7988293
 Job name: 01_read_data_to_r
-Node name: compute-096
+Node name: compute-093
 Task id: 
-Unloading conda_R/4.4
+Unloading conda_R/4.3
 Loading conda_R/4.3
-
-The following have been reloaded with a version change:
-  1) conda/3-24.3.0 => conda/3-23.3.1     2) conda_R/4.4 => conda_R/4.3
-
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -43,4 +39,4 @@ Currently Loaded Modules:
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 **** Job ends ****
-Fri Jun 28 11:21:56 AM EDT 2024
+Fri Jun 28 11:43:04 AM EDT 2024
