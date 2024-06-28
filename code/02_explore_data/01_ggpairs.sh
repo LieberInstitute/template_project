@@ -1,33 +1,36 @@
 #!/bin/bash
-#$ -cwd
-#$ -l bluejay,mem_free=10G,h_vmem=10G,h_fsize=100G
-#$ -N ggpairs
-#$ -o logs/01_ggpairs.txt
-#$ -e logs/01_ggpairs.txt
-#$ -hold_jid read_data_to_r
-#$ -m e
+#SBATCH -p bluejay
+#SBATCH --mem=10G
+#SBATCH --job-name=01_ggpairs
+#SBATCH -c 1
+#SBATCH -t 1-00:00:00
+#SBATCH -o logs/01_ggpairs.txt
+#SBATCH -e logs/01_ggpairs.txt
+#SBATCH --mail-type=ALL
+
+set -e
 
 echo "**** Job starts ****"
 date
 
 echo "**** JHPCE info ****"
 echo "User: ${USER}"
-echo "Job id: ${JOB_ID}"
-echo "Job name: ${JOB_NAME}"
-echo "Hostname: ${HOSTNAME}"
-echo "Task id: ${SGE_TASK_ID}"
+echo "Job id: ${SLURM_JOB_ID}"
+echo "Job name: ${SLURM_JOB_NAME}"
+echo "Node name: ${HOSTNAME}"
+echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-## Load the R module (absent since the JHPCE upgrade to CentOS v7)
-module load conda_R/4.2
+## Load the R module
+module load conda_R/4.3
 
 ## List current modules for reproducibility
 module list
 
 ## Edit with your job command
-Rscript 01_ggpairs.R
+Rscript -e "options(width = 120); sessioninfo::session_info()"
 
 echo "**** Job ends ****"
 date
 
-## This script was made using sgejobs version 0.99.1
-## available from http://research.libd.org/sgejobs/
+## This script was made using slurmjobs version 1.2.2
+## available from http://research.libd.org/slurmjobs/
