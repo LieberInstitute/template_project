@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -p bluejay
+#SBATCH -p katun
 #SBATCH --mem=10G
 #SBATCH --job-name=01_ggpairs
 #SBATCH -c 1
@@ -21,16 +21,16 @@ echo "Node name: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
 ## Load the R module
-module load conda_R/4.3
+module load conda_R/4.4
 
 ## List current modules for reproducibility
 module list
 
 ## Edit with your job command
-Rscript -e "options(width = 120); sessioninfo::session_info()"
+Rscript 01_ggpairs.R
 
 echo "**** Job ends ****"
 date
 
-## This script was made using slurmjobs version 1.2.2
+## This script was made using slurmjobs version 1.3.0
 ## available from http://research.libd.org/slurmjobs/
