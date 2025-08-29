@@ -11,11 +11,13 @@ dir_rdata <- here("processed-data", "01_read_data_to_r")
 dir.create(dir_rdata, showWarnings = FALSE, recursive = TRUE)
 # dir.create(dir_plots, showWarnings = FALSE, recursive = TRUE)
 
-## For creating the companion bash script using sgejobs
-# sgejobs::job_single(
+## For creating the companion bash script using slurmjobs
+# slurmjobs::job_single(
 #     here("code", "01_read_data_to_r", "01_read_data_to_r"),
 #     create_shell = TRUE,
-#     queue = "bluejay"
+#     partition = "katun",
+#     command = "Rscript 01_read_data_to_r.R",
+#     create_logdir = FALSE
 # )
 
 ## Read in raw-data
@@ -35,5 +37,5 @@ Sys.time()
 proc.time()
 options(width = 120) ## Makes it easier to read later
 session_info() ## We want to record this information on the log file. If you
-## don't have a companion shell script (sgejobs), then copy-paste the output
+## don't have a companion shell script (slurmjobs), then copy-paste the output
 ## into this script.
