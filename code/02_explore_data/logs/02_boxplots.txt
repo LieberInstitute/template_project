@@ -1,17 +1,17 @@
 **** Job starts ****
-Fri Aug 29 10:06:50 AM EDT 2025
+Fri Aug 29 10:23:26 AM EDT 2025
 **** JHPCE info ****
 User: neagles
-Job id: 21691941
+Job id: 21691986
 Job name: 02_boxplots
 Node name: compute-169
 Task id: 
-Unloading conda_R/4.4
-Loading conda_R/4.4
+Unloading conda_R/4.5
+Loading conda_R/4.5
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-24.3.0
-  2) JHPCE_tools/3.0            4) conda_R/4.4
+  2) JHPCE_tools/3.0            4) conda_R/4.5
 
  
 
@@ -28,12 +28,12 @@ Warning messages:
 null device 
           1 
 [1] "Reproducibility information:"
-[1] "2025-08-29 10:06:52 EDT"
+[1] "2025-08-29 10:23:28 EDT"
    user  system elapsed 
-  0.912   0.062   1.239 
+  1.072   0.074   1.336 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.4.0 Patched (2024-05-22 r86590)
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
  os       Rocky Linux 9.4 (Blue Onyx)
  system   x86_64, linux-gnu
  ui       X11
@@ -42,51 +42,52 @@ null device
  ctype    en_US.UTF-8
  tz       US/Eastern
  date     2025-08-29
- pandoc   3.1.13 @ /jhpce/shared/community/core/conda_R/4.4/bin/pandoc
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
+ quarto   NA
 
 ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- abind         1.4-8   2024-09-12 [1] CRAN (R 4.4.0)
- backports     1.5.0   2024-05-23 [1] CRAN (R 4.4.0)
- broom         1.0.6   2024-05-17 [2] CRAN (R 4.4.0)
- car           3.1-2   2023-03-30 [2] CRAN (R 4.4.0)
- carData       3.0-5   2022-01-06 [2] CRAN (R 4.4.0)
- cli           3.6.3   2024-06-21 [1] CRAN (R 4.4.0)
- colorspace    2.1-1   2024-07-26 [1] CRAN (R 4.4.0)
- dplyr         1.1.4   2023-11-17 [1] CRAN (R 4.4.0)
- fansi         1.0.6   2023-12-08 [1] CRAN (R 4.4.0)
- farver        2.1.2   2024-05-13 [1] CRAN (R 4.4.0)
- generics      0.1.3   2022-07-05 [1] CRAN (R 4.4.0)
- ggplot2     * 3.5.1   2024-04-23 [1] CRAN (R 4.4.0)
- ggpubr      * 0.6.0   2023-02-10 [2] CRAN (R 4.4.0)
- ggsignif      0.6.4   2022-10-13 [2] CRAN (R 4.4.0)
- glue          1.7.0   2024-01-09 [1] CRAN (R 4.4.0)
- gtable        0.3.5   2024-04-22 [1] CRAN (R 4.4.0)
- here        * 1.0.1   2020-12-13 [1] CRAN (R 4.4.0)
- labeling      0.4.3   2023-08-29 [1] CRAN (R 4.4.0)
- lifecycle     1.0.4   2023-11-07 [1] CRAN (R 4.4.0)
- magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.4.0)
- munsell       0.5.1   2024-04-01 [1] CRAN (R 4.4.0)
- pillar        1.9.0   2023-03-22 [1] CRAN (R 4.4.0)
- pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.4.0)
- purrr         1.0.2   2023-08-10 [1] CRAN (R 4.4.0)
- R6            2.5.1   2021-08-19 [1] CRAN (R 4.4.0)
- rlang         1.1.4   2024-06-04 [1] CRAN (R 4.4.0)
- rprojroot     2.0.4   2023-11-05 [1] CRAN (R 4.4.0)
- rstatix       0.7.2   2023-02-01 [2] CRAN (R 4.4.0)
- scales        1.3.0   2023-11-28 [1] CRAN (R 4.4.0)
- sessioninfo * 1.2.2   2021-12-06 [2] CRAN (R 4.4.0)
- tibble        3.2.1   2023-03-20 [1] CRAN (R 4.4.0)
- tidyr         1.3.1   2024-01-24 [1] CRAN (R 4.4.0)
- tidyselect    1.2.1   2024-03-11 [1] CRAN (R 4.4.0)
- utf8          1.2.4   2023-10-22 [1] CRAN (R 4.4.0)
- vctrs         0.6.5   2023-12-01 [1] CRAN (R 4.4.0)
- withr         3.0.1   2024-07-31 [1] CRAN (R 4.4.0)
+ package      * version date (UTC) lib source
+ abind          1.4-8   2024-09-12 [1] CRAN (R 4.5.0)
+ backports      1.5.0   2024-05-23 [1] CRAN (R 4.5.0)
+ broom          1.0.8   2025-03-28 [2] CRAN (R 4.5.0)
+ car            3.1-3   2024-09-27 [2] CRAN (R 4.5.0)
+ carData        3.0-5   2022-01-06 [2] CRAN (R 4.5.0)
+ cli            3.6.5   2025-04-23 [1] CRAN (R 4.5.0)
+ dichromat      2.0-0.1 2022-05-02 [2] CRAN (R 4.5.0)
+ dplyr          1.1.4   2023-11-17 [1] CRAN (R 4.5.0)
+ farver         2.1.2   2024-05-13 [1] CRAN (R 4.5.0)
+ Formula        1.2-5   2023-02-24 [2] CRAN (R 4.5.0)
+ generics       0.1.4   2025-05-09 [1] CRAN (R 4.5.0)
+ ggplot2      * 3.5.2   2025-04-09 [1] CRAN (R 4.5.0)
+ ggpubr       * 0.6.0   2023-02-10 [2] CRAN (R 4.5.0)
+ ggsignif       0.6.4   2022-10-13 [2] CRAN (R 4.5.0)
+ glue           1.8.0   2024-09-30 [1] CRAN (R 4.5.0)
+ gtable         0.3.6   2024-10-25 [1] CRAN (R 4.5.0)
+ here         * 1.0.1   2020-12-13 [1] CRAN (R 4.5.0)
+ labeling       0.4.3   2023-08-29 [1] CRAN (R 4.5.0)
+ lifecycle      1.0.4   2023-11-07 [1] CRAN (R 4.5.0)
+ magrittr       2.0.3   2022-03-30 [1] CRAN (R 4.5.0)
+ pillar         1.11.0  2025-07-04 [1] CRAN (R 4.5.0)
+ pkgconfig      2.0.3   2019-09-22 [1] CRAN (R 4.5.0)
+ purrr          1.1.0   2025-07-10 [1] CRAN (R 4.5.0)
+ R6             2.6.1   2025-02-15 [1] CRAN (R 4.5.0)
+ RColorBrewer   1.1-3   2022-04-03 [1] CRAN (R 4.5.0)
+ rlang          1.1.6   2025-04-11 [1] CRAN (R 4.5.0)
+ rprojroot      2.1.0   2025-07-12 [1] CRAN (R 4.5.0)
+ rstatix        0.7.2   2023-02-01 [2] CRAN (R 4.5.0)
+ scales         1.4.0   2025-04-24 [1] CRAN (R 4.5.0)
+ sessioninfo  * 1.2.3   2025-02-05 [2] CRAN (R 4.5.0)
+ tibble         3.3.0   2025-06-08 [1] CRAN (R 4.5.0)
+ tidyr          1.3.1   2024-01-24 [1] CRAN (R 4.5.0)
+ tidyselect     1.2.1   2024-03-11 [1] CRAN (R 4.5.0)
+ vctrs          0.6.5   2023-12-01 [1] CRAN (R 4.5.0)
+ withr          3.0.2   2024-10-28 [1] CRAN (R 4.5.0)
 
- [1] /users/neagles/R/4.4
- [2] /jhpce/shared/community/core/conda_R/4.4/R/lib64/R/site-library
- [3] /jhpce/shared/community/core/conda_R/4.4/R/lib64/R/library
+ [1] /users/neagles/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
+ * ── Packages attached to the search path.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 **** Job ends ****
-Fri Aug 29 10:06:52 AM EDT 2025
+Fri Aug 29 10:23:28 AM EDT 2025
