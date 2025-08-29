@@ -56,13 +56,12 @@ For realistic examples, check:
   * See [`raw-data/sample_info/README.md`](https://github.com/LieberInstitute/template_project/blob/main/raw-data/sample_info/README.md) about where to document sample sheets (typically Excel files) we use for sequencing orders with the JHU Single Cell & Transcriptomics Core.
 * Start your first code directory, like `code/01_something`. Typically this first step reads in data from `raw-data` and imports it into R.
   * See [`code/01_read_data_to_r/01_read_data_to_r.R`](https://github.com/LieberInstitute/template_project/blob/main/code/01_read_data_to_r/01_read_data_to_r.R) as an example R script.
-* Use [`sgejobs::job_single()`](http://research.libd.org/sgejobs/reference/job_single.html) to create a companion shell script for your R script, such that you can use `qsub` to run it at [JHCPE](http://www.jhpce.jhu.edu/).
-  * See [`code/01_read_data_to_r/01_read_data_to_r.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/01_read_data_to_r/01_read_data_to_r.sh) as an example bash script created with `sgejobs::job_single()`.
+* Use [`slurmjobs::job_single()`](https://research.libd.org/slurmjobs/reference/job_single.html) to create a companion shell script for your R script, such that you can use `sbatch` to run it at [JHPCE](http://www.jhpce.jhu.edu/).
+  * See [`code/01_read_data_to_r/01_read_data_to_r.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/01_read_data_to_r/01_read_data_to_r.sh) as an example bash script created with `slurmjobs::job_single()`.
 * Edit the [`code/run_all.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/run_all.sh) script that specifies how you can re-run all analyses.
   * This file is useful for reproducibility and for cases when we do need to re-run all or part of the analyses. For example, after a bug fix in a package the analysis depends on.
   * This file also acts as a detailed `README.md`.
 * Once you have read your data into R, you will start having scripts that depend on the output of previous ones. See [`code/02_boxplots`](https://github.com/LieberInstitute/template_project/blob/main/code/02_boxplots) for an example of this case.
   * [`code/02_boxplots/01_ggpairs.R`](https://github.com/LieberInstitute/template_project/blob/main/code/02_boxplots/01_ggpairs.R) uses the data created in the previous step. Now how `01_ggpairs.R` starts again at `01` since this is the first script on this second analysis code step (`02_boxplots`).
-  * [`code/02_boxplots/01_ggpairs.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/02_boxplots/01_ggpairs.sh) uses the `hold_jid` option for `qsub` that allows you to specify that this script has to wait for a previous one to finish running. This allows us to use [`code/run_all.sh`](https://github.com/LieberInstitute/template_project/blob/main/code/run_all.sh) effectively.
   
 Good luck!! If you have any questions about how to organize files, feel free to schedule a [Data Science guidance session (DSgs)](https://lcolladotor.github.io/bioc_team_ds/data-science-guidance-sessions.html#.YzMSS-zMKX0) with any team member.
