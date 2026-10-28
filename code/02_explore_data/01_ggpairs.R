@@ -4,11 +4,9 @@ library("here") ## for using relative paths across the whole project
 library("sessioninfo") ## for reproducibility information
 library("GGally") ## for plotting functions
 
-## Define & create output directories
-## We don't need an rdata directory in this case
-# dir_rdata <- here("processed-data", "02_explore_data")
-dir_plots <- here("plots", "02_explore_data")
-# dir.create(dir_rdata, showWarnings = FALSE, recursive = TRUE)
+## Define & create output directories. In this case we only produce plots, not
+## other forms of processed data
+dir_plots <- here("plots", "02_explore_data", "01_ggpairs")
 dir.create(dir_plots, showWarnings = FALSE, recursive = TRUE)
 
 ## For creating the companion bash script using slurmjobs
@@ -22,8 +20,12 @@ dir.create(dir_plots, showWarnings = FALSE, recursive = TRUE)
 
 ## Read in data, which is likely under processed-data and that we can locate
 ## using here::here()
-penguins_data <-
-    read.csv(here("processed-data", "01_read_data_to_r", "penguins_data.csv"))
+penguins_data <- read.csv(
+    here(
+        "processed-data", "01_read_data_to_r", "01_read_data_to_r",
+        "penguins_data.csv"
+    )
+)
 
 ## Make a plot exploring the data
 pdf(

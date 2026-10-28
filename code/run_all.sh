@@ -20,14 +20,13 @@ echo "Job name: ${SLURM_JOB_NAME}"
 echo "Node name: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-module load conda_R/4.5
+module load conda_R/4.6
 
 ## List current modules for reproducibility
 module list
 
 MAINDIR=$(git rev-parse --show-toplevel)
 CODEDIR="${MAINDIR}/code"
-PROCESSEDIR="${MAINDIR}/processed-data"
 
 ## Update code style
 cd ${CODEDIR}
@@ -36,8 +35,6 @@ Rscript update_style.R
 ## Read in some raw-data into R
 cd ${CODEDIR}/01_read_data_to_r
 mkdir -p logs ## Create the logs directory if it doesn't exist
-# Delete output data before re-generating them:
-rm -f ${PROCESSEDIR}/01_read_data_to_r/penguins_data.csv
 id1=$(sbatch --parsable 01_read_data_to_r.sh)
 
 ## Explore the data

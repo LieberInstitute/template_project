@@ -4,12 +4,10 @@ library("here") ## for using relative paths across the whole project
 library("sessioninfo") ## for reproducibility information
 library("palmerpenguins") ## for example data
 
-## Define & create output directories
-dir_rdata <- here("processed-data", "01_read_data_to_r")
-## We don't need a plots directory in this case
-# dir_plots <- here("plots", "01_read_data_to_r")
+## Define & create output directory. We won't generate a plotting directory in
+## this case since there are no plots in this script
+dir_rdata <- here("processed-data", "01_read_data_to_r", "01_read_data_to_r")
 dir.create(dir_rdata, showWarnings = FALSE, recursive = TRUE)
-# dir.create(dir_plots, showWarnings = FALSE, recursive = TRUE)
 
 ## For creating the companion bash script using slurmjobs
 # slurmjobs::job_single(
