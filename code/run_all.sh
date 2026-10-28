@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -p katun
-#SBATCH --mem=10G
+#SBATCH --mem=5G
 #SBATCH --job-name=run_all_template_project
 #SBATCH -c 1
 #SBATCH -t 1-00:00:00
