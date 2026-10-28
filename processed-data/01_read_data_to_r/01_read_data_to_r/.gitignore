@@ -3,4 +3,4 @@
 ## git add -f path_to_file
 penguins_data.csv
 ## Normally we don't version control processed-data files unless they are
-## relatively small (like < 25 Mb)
+## relatively small (like < 25 MB)

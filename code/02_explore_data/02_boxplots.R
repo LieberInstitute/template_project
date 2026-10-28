@@ -42,7 +42,7 @@ pdf(
     useDingbats = FALSE
 )
 ## width and height are in inches by default. Their default values are 7
-## useDingats = FALSE makes it easier to deal with the resulting PDF on Adobe
+## useDingbats = FALSE makes it easier to deal with the resulting PDF on Adobe
 ## Illustrator later on
 ggviolin(
     penguins_data,
