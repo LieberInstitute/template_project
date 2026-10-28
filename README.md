@@ -40,6 +40,11 @@ For realistic examples, check:
   * We version control small output summary files (typically < 25 MB), such as files that end up being supplementary files of a paper.
 * [`plots`](https://github.com/LieberInstitute/template_project/blob/devel/plots): example organization for the `plots` files.
   * We typically only version control small plot files (about < 25 MB). We can then share the specific plot links on Slack or elsewhere, such that if we later update the plot(s), the links will still work. We can also see how they changed over time thanks to having version controlled them.
+
+## Other conventions this template follows
+
+* Each conceptually separate analysis involves a matching directory under `code`, `processed-data`, and `plots`. Individual steps for that analysis typically have a numbered R and shell script with the same base name within that analysis directory. For example, the script `code/02_explore_data/01_ggpairs.R` is the first step involved in exploring the data, and plots for the `02_explore_data` analysis live in a corresponding `plots/02_explore_data` directory.
+* Each script pair in `code` generates its own `processed-data` and `plots` directories (whenever the code actually writes data or plots, respectively). For example, `code/02_explore_data/01_ggpairs.R` writes plots to its own dedicated directory: `plots/02_explore_data/01_ggpairs` (if it also produced other data, that would go under `processed-data/02_explore_data/01_ggpairs`).
   
 ## How to use this template
 
